@@ -13,7 +13,9 @@ console.log(createApp)
 createApp({
     data(){
         return{
-            mailApi: []
+            mailApi: {
+                text: ''
+            }
 
         }
     },
