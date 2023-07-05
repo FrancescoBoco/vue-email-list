@@ -13,14 +13,22 @@ console.log(createApp)
 createApp({
     data(){
         return{
+            mailApi: []
 
         }
     },
     methods: {
         created(){
             for(let i = 0; i > 10; i++){
-                
+                axios
+                .get('https://flynn.boolean.careers/exercises/api/random/mail')
+                .then((response) => {
+                    console.log('prova', response.data)
+                    this.todoList.push({
+                        text: response.data,
+                    })
+                });
             }
         }
     }
-})
+}).mount('#app')

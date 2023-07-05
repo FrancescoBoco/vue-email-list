@@ -12,17 +12,20 @@
 </head>
 <body>
 
-    <header>
-        HEADER
-    </header>
+    <div id="app">
 
-    <main>
-        <MAIN>
-    </main>
+        <ul>
+            <li v-for="(singleEmail, i) in mailApi">
+                {{singleEmail.text}}
 
-    <footer>
-        FOOTER 
-    </footer>
+            </li>
+        </ul>
+
+
+
+
+        
+    </div>
 
 
     <!-- SCRIPT  -->
