@@ -12,20 +12,32 @@ const {createApp} = Vue
 createApp({
     data(){
         return{
+            checkEmails :[],
             emailList : []
+
         }
     },
-    mounted(){
+    created(){
+    
         for(let i = 0; i < 10; i++){
             axios
             .get('https://flynn.boolean.careers/exercises/api/random/mail')
             .then((response) => {
                 console.log('prova', response.data.response)
-                this.emailList.push(
+                this.checkEmails.push(
                     response.data.response,
                 )
+                if(this.checkEmails.length == 10){
+                    console.log('finito')
+                    
+                        this.checkEmails == [...this.emailList]
+
+                    
+                }
             });
         }
+    
+       
     }
     
 }).mount('#app')
